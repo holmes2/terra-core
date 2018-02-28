@@ -11,12 +11,21 @@ import SectionHeaderSrc from '!raw-loader!terra-section-header/src/SectionHeader
 
 // Example Files
 import DefaultSectionHeader from './DefaultSectionHeader';
-import DefaultSectionHeaderSrc from '!raw-loader!./DefaultSectionHeader.jsx';
+import ClosedSectionHeader from './ClosedSectionHeader';
+import OpenSectionHeader from './OpenSectionHeader';
+import OnClickSectionHeader from './OnClickSectionHeader';
+import AccordionSectionHeader from './AccordionSectionHeader';
+import AnimatedSectionHeader from './AnimatedSectionHeader';
 
 const Examples = () => (
   <div>
     <h2>Examples</h2>
     <DefaultSectionHeader />
+    <ClosedSectionHeader />
+    <OpenSectionHeader />
+    <OnClickSectionHeader />
+    <AccordionSectionHeader />
+    <AnimatedSectionHeader />
   </div>
 );
 

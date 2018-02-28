@@ -1,5 +1,69 @@
+@import '~terra-mixins';
+
 :local {
+  // extension to move the accordion icon to its 'open' presentation, regardless of bidi
+  %is-open {
+    /* stylelint-disable selector-no-qualifying-type */
+    &.is-open {
+      transform: rotate(90deg);
+    }
+    /* stylelint-enable selector-no-qualifying-type */
+  }
+
   .section-header {
-    background-color: #f00; // TODO: remove
+    @include terra-padding-end(var(--terra-section-header-padding-end, 0.7142857143rem));
+    @include terra-padding-start(var(--terra-section-header-padding-start, 0.5rem));
+   
+    background: var(--terra-section-header-background, #fff);
+    border: var(--terra-section-header-border, 1px solid #1c1f21);
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: var(--terra-section-header-padding-bottom, 0.5rem); // TODO: replace with real value
+    padding-top: var(--terra-section-header-padding-top, 0.5rem); // TODO: replace with real value
+    width: 100%;
+
+    &.is-interactable {
+      &:hover,
+      &:focus {
+        background: var(--terra-section-header-background, #cfd0d1);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .title {
+    text-transform: var(--terra-section-header-text-transform, none);
+  }
+
+  .glyph {
+    @include terra-margin-end(0.2142857143rem);
+    line-height: unset;
+
+    > svg {
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 10px; // TODO: replace with real value
+      width: 10px; // TODO: replace with real value
+    }
+
+    .accordion-glyph {
+      background: var(--terra-section-header-accordion-glyph, inline-svg("<svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 48 48' enable-background='new 0 0 48 48' xml:space='preserve'><title>0023_caretRight_a</title><path id='caretRight' d='M12,0l24,24L12,48V0z'/></svg>"));
+      
+      &.is-animated {
+        // NOTE: this is intentionally the same value as https://github.com/cerner/terra-core/blob/master/packages/terra-toggle/src/Toggle.jsx#L37
+        transition: 2.5s;
+      }
+
+      /* stylelint-disable selector-max-compound-selectors, max-nesting-depth */
+      [dir=ltr] & {
+        @extend %is-open;
+      }
+      
+      [dir=rtl] & {
+        @extend %is-open;
+        transform: rotate(180deg); 
+      }
+      /* stylelint-enable selector-max-compound-selectors, max-nesting-depth */
+    }
   }
 }

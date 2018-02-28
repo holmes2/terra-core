@@ -7,25 +7,71 @@ import styles from './SectionHeader.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
- /*
- * Content to be displayed as the name
- */
-  name: PropTypes.string,
+  /**
+   * Text to be displayed on the SectionHeader.
+   */
+  title: PropTypes.node.isRequired,
+  /**
+   * Whether the change between 'open' and' closed' position of the accordion icon is animated.
+   */
+  isAnimated: PropTypes.bool,
+  /**
+   * Callback function triggered when the accordion icon is clicked.
+   */
+  onClick: PropTypes.func,
+  /**
+   * Whether the accordion icon should be displayed in its 'open' or 'closed' position.
+   */
+  isOpen: PropTypes.bool,
 };
 
 const defaultProps = {
-  name: 'default',
+  isAnimated: false,
+  onClick: undefined,
+  isOpen: false,
 };
 
-const SectionHeader = ({ name, ...customProps }) => {
+const SectionHeader = ({
+  title,
+  isAnimated,
+  onClick,
+  isOpen,
+  ...customProps
+}) => {
+  if (!onClick && (isAnimated || isOpen)) {
+    /* eslint-disable no-console */
+    console.warn('\'isAnimated\' & \'isOpen\' are intended to be used only when \'onClick\' is provided.');
+  }
+
+  const attributes = Object.assign({}, customProps);
+
+  if (onClick) {
+    attributes.tabIndex = '0';
+  }
+
+  const accordionGlyphClassNames = cx([
+    'accordion-glyph',
+    { 'is-animated': onClick && isAnimated },
+    { 'is-open': onClick && isOpen },
+  ]);
+
+  const accordionGlyph = (
+    <span className={cx('glyph')}>
+      <svg className={accordionGlyphClassNames} />
+    </span>
+  );
+
   const SectionHeaderClassNames = cx([
     'section-header',
+    { 'is-interactable': onClick },
     customProps.className,
   ]);
 
+  /* eslint-disable jsx-a11y/no-static-element-interactions */
   return (
-    <div {...customProps} className={SectionHeaderClassNames}>
-      Hello, world!
+    <div {...attributes} onClick={onClick} className={SectionHeaderClassNames}>
+      {onClick && accordionGlyph}
+      <span className={cx('title')}>{title}</span>
     </div>
   );
 };
