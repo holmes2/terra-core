@@ -74,6 +74,7 @@ const SectionHeader = ({
       <span className={cx('title')}>{title}</span>
     </div>
   );
+  /* eslint-enable jsx-a11y/no-static-element-interactions */
 };
 
 SectionHeader.propTypes = propTypes;
