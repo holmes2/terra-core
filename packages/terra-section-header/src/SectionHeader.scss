@@ -11,15 +11,15 @@
 
   .section-header {
     @include terra-padding-end(var(--terra-section-header-padding-end, 0.7142857143rem));
-    @include terra-padding-start(var(--terra-section-header-padding-start, 0.5rem));
+    @include terra-padding-start(var(--terra-section-header-padding-start, 0.642857143rem));  // TODO: replace with callout value
    
     background: var(--terra-section-header-background, #fff);
     border: var(--terra-section-header-border, 1px solid #1c1f21);
     color: var(--terra-section-header-color, #1c1f21);
     display: flex;
     flex-wrap: nowrap;
-    padding-bottom: var(--terra-section-header-padding-bottom, 0.5rem); // TODO: replace with callout value
-    padding-top: var(--terra-section-header-padding-top, 0.5rem); // TODO: replace with recalloutal value
+    padding-bottom: var(--terra-section-header-padding-bottom, 0.642857143rem); // TODO: replace with callout value
+    padding-top: var(--terra-section-header-padding-top, 0.642857143rem); // TODO: replace with recalloutal value
     width: 100%;
 
     &.is-interactable {
