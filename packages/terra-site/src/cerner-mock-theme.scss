@@ -573,7 +573,22 @@
   --terra-status-view-actions-button-margin-right: 0.357rem;
   --terra-status-view-actions-button-margin-top: 0.714rem;
 
-  //--terra-form-input-transition-duration
+  // terra-section-header
+  --terra-section-header-padding-end: 5rem;
+  --terra-section-header-padding-start: 5rem;
+  --terra-section-header-background: rgba(255, 0, 0, 0.25);
+  --terra-section-header-border: 5px solid blue;
+  --terra-section-header-color: orange;
+  --terra-section-header-padding-bottom: 4rem;
+  --terra-section-header-padding-top: 4rem;
+  --terra-section-header-hover-focus-background: red;
+  --terra-section-header-hover-focus-border: 10px solid blue;
+  --terra-section-header-hover-focus-color: pink;
+  --terra-section-header-text-transform: UPPERCASE;
+  --terra-section-header-accordion-glyph: inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' class='is-bidi'><path fill='#582c83' d='M45.8 12c1.2 0 2.2 1 2.2 2.2v26.7c0 1.2-1 2.2-2.2 2.2H2.2C1 43 0 42 0 40.8V7.2C0 6 1 5 2.2 5H15c1.4.1 2.7.6 3.7 1.6l3.8 3.9c1 1 2.3 1.5 3.7 1.6l19.4-.1h.2z'/></svg>");
+  --terra-section-header-accordion-glyph-rtl: inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' class='is-bidi'><path fill='#582c83' d='M45.8 12c1.2 0 2.2 1 2.2 2.2v26.7c0 1.2-1 2.2-2.2 2.2H2.2C1 43 0 42 0 40.8V7.2C0 6 1 5 2.2 5H15c1.4.1 2.7.6 3.7 1.6l3.8 3.9c1 1 2.3 1.5 3.7 1.6l19.4-.1h.2z'/></svg>");
+
+  // terra-form-input
   --terra-form-input-focus-animation-background: linear-gradient(to bottom, red, blue);
   --terra-form-input-focus-background-start: 0 0.143rem;
   --terra-form-input-focus-keyboard-animation-size: 100% 0.214rem;
