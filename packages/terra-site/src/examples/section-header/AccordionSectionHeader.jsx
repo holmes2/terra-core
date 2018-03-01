@@ -2,7 +2,6 @@ import React from 'react';
 
 import SectionHeaderExampleTemplate from './SectionHeaderExampleTemplate';
 
-
 class AccordionSectionHeader extends React.Component {
   constructor(props) {
     super(props);

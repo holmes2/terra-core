@@ -11,6 +11,8 @@ import SectionHeaderSrc from '!raw-loader!terra-section-header/src/SectionHeader
 
 // Example Files
 import DefaultSectionHeader from './DefaultSectionHeader';
+import LongTitleSectionHeader from './LongTitleSectionHeader';
+import LongTitleAccordionSectionHeader from './LongTitleAccordionSectionHeader';
 import ClosedSectionHeader from './ClosedSectionHeader';
 import OpenSectionHeader from './OpenSectionHeader';
 import OnClickSectionHeader from './OnClickSectionHeader';
@@ -21,6 +23,8 @@ const Examples = () => (
   <div>
     <h2>Examples</h2>
     <DefaultSectionHeader />
+    <LongTitleSectionHeader />
+    <LongTitleAccordionSectionHeader />
     <ClosedSectionHeader />
     <OpenSectionHeader />
     <OnClickSectionHeader />
