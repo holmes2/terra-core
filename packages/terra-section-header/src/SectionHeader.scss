@@ -37,16 +37,15 @@
 
   .glyph {
     @include terra-margin-end(0.2142857143rem);
-    max-height: 10px; // TODO: replace with callout value
-    max-width: 10px; // TODO: replace with callout value
+    max-height: 0.714285714rem;
+    max-width: 0.714285714rem;
     
     > svg {
       background-repeat: no-repeat;
       background-size: contain;
-      height: 10px; // TODO: replace with callout value
-      width: 10px; // TODO: replace with callout value
+      height: 0.714285714rem;
+      width: 0.714285714rem;
     }
-    
     
     .accordion-glyph {
       @extend %is-open;
