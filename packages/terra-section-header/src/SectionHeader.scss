@@ -13,6 +13,7 @@
    
     background: var(--terra-section-header-background, #fff);
     border: var(--terra-section-header-border, 1px solid #1c1f21);
+    color: var(--terra-section-header-color, #1c1f21);
     display: flex;
     flex-wrap: nowrap;
     padding-bottom: var(--terra-section-header-padding-bottom, 0.5rem); // TODO: replace with callout value
@@ -23,6 +24,8 @@
       &:hover,
       &:focus {
         background: var(--terra-section-header-hover-focus-background, #cfd0d1);
+        border: var(--terra-section-header-hover-focus-border, 1px solid #1c1f21);
+        color: var(--terra-section-header-hover-focus-color, #1c1f21);
         cursor: pointer;
       }
     }
