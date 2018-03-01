@@ -49,15 +49,15 @@ const SectionHeader = ({
     attributes.tabIndex = '0';
   }
 
-  const accordionGlyphClassNames = cx([
-    'accordion-glyph',
+  const glyphClassNames = cx([
+    'glyph',
     { 'is-animated': onClick && isAnimated },
     { 'is-open': onClick && isOpen },
   ]);
 
   const accordionGlyph = (
-    <span className={cx('glyph')}>
-      <svg className={accordionGlyphClassNames} />
+    <span className={glyphClassNames}>
+      <svg className={cx('accordion-glyph')} />
     </span>
   );
 
