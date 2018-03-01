@@ -2,9 +2,11 @@
 
 :local {
   %is-open {
+    /* stylelint-disable selector-no-qualifying-type */
     &.is-open {
       transform: rotate(90deg);
     }
+    /* stylelint-enable selector-no-qualifying-type */
   }
 
   .section-header {
