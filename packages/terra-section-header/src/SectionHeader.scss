@@ -1,6 +1,12 @@
 @import '~terra-mixins';
 
 :local {
+  %is-open {
+    &.is-open {
+      transform: rotate(90deg);
+    }
+  }
+
   .section-header {
     @include terra-padding-end(var(--terra-section-header-padding-end, 0.7142857143rem));
     @include terra-padding-start(var(--terra-section-header-padding-start, 0.5rem));
@@ -27,6 +33,7 @@
   }
 
   .glyph {
+    @extend %is-open;
     @include terra-margin-end(0.2142857143rem);
 
     > svg {
@@ -36,32 +43,20 @@
       width: 10px; // TODO: replace with callout value
     }
 
-    [dir=ltr] & {
-      transform: rotate(0deg);
-      transition: transform;
-      transition-duration: 1s;
-
-      &.is-open {
-        transform: rotate(90deg);
-        transition: transform;
-        transition-duration: 1s;
-      }
-    }
-
-    [dir=rtl] & {
-      transform: rotate(-180deg);
-      transition: transform;
-      transition-duration: 1s;
-
-      &.is-open {
-        transform: rotate(-270deg);
-        transition: transform;
-        transition-duration: 1s;
-      }
+    &.is-animated {
+      transition: 1s;
     }
 
     .accordion-glyph {
-      background: var(--terra-section-header-accordion-glyph, inline-svg("<svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 48 48' enable-background='new 0 0 48 48' xml:space='preserve'><title>0023_caretRight_a</title><path id='caretRight' d='M12,0l24,24L12,48V0z'/></svg>"));
+      /* stylelint-disable string-quotes, selector-max-compound-selectors */
+      [dir=ltr] & {
+        background: var(--terra-section-header-accordion-glyph, inline-svg("<svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 48 48' enable-background='new 0 0 48 48' xml:space='preserve'><title>0023_caretRight_a</title><path id='caretRight' d='M12,0l24,24L12,48V0z'/></svg>"));
+      }
+
+      [dir=rtl] & {
+        background: var(--terra-section-header-accordion-glyph-rtl, inline-svg("<svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 48 48' style='enable-background:new 0 0 48 48;' xml:space='preserve'><title>0023_caretRight_a</title><path id='caretLeft' d='M36,48L12,24L36,0V48z'/></svg>"));
+      }
+      /* stylelint-enable string-quotes, selector-max-compound-selectors */
     }
   }
 }
